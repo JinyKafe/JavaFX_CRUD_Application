@@ -1,37 +1,41 @@
 package com.codetreatise;
 
+import com.codetreatise.config.StageManager;
+import com.codetreatise.view.FxmlView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.codetreatise.config.StageManager;
-import com.codetreatise.view.FxmlView;
-
 @SpringBootApplication
-public class Main extends Application {
+public class Main extends Application
+{
 
     protected ConfigurableApplicationContext springContext;
     protected StageManager stageManager;
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args)
+    {
         Application.launch(args);
     }
 
     @Override
-    public void init() throws Exception {
+    public void init() throws Exception
+    {
         springContext = springBootApplicationContext();
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception
+    {
         stageManager = springContext.getBean(StageManager.class, stage);
         displayInitialScene();
     }
 
     @Override
-    public void stop() throws Exception {
+    public void stop() throws Exception
+    {
         springContext.close();
     }
 
@@ -40,12 +44,14 @@ public class Main extends Application {
      * Scene to be displayed on startup. Example: Functional tests on main
      * window.
      */
-    protected void displayInitialScene() {
+    protected void displayInitialScene()
+    {
         stageManager.switchScene(FxmlView.LOGIN);
     }
 
-    
-    private ConfigurableApplicationContext springBootApplicationContext() {
+
+    private ConfigurableApplicationContext springBootApplicationContext()
+    {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
         String[] args = getParameters().getRaw().stream().toArray(String[]::new);
         return builder.run(args);
