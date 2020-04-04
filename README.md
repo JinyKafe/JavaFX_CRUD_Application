@@ -1,6 +1,8 @@
 # JavaFX Spring Boot App
 The application frontend created using JavaFX and backend services are implemented using Spring Boot. The app demonstrate simple CRUD operation and switching between two scenes with Login and User Dashboard view. 
 
+Tutorial taken from [this youtube channel](https://www.youtube.com/watch?v=NQQOPy-jmhA)
+
 ![](doc/screenshot.png)
 
 user/password [jankotek@atlas.cz / test]
