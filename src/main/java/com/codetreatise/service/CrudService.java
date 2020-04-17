@@ -1,4 +1,4 @@
-package com.codetreatise.generic;
+package com.codetreatise.service;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import java.util.List;
  * @since 05-04-2017
  */
 
-public interface GenericService<T extends Object>
+public interface CrudService<T extends Object>
 {
 
     T save(T entity);
@@ -16,11 +16,11 @@ public interface GenericService<T extends Object>
 
     void delete(T entity);
 
-    void delete(Long id);
+    void deleteById(Long id);
 
     void deleteInBatch(List<T> entities);
 
-    T find(Long id);
+    T findById(Long id);
 
     List<T> findAll();
 }

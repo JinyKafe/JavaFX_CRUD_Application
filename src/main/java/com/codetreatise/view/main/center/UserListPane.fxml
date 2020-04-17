@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.codetreatise.view.main.center.UserListPane">
+    <VBox alignment="TOP_RIGHT" prefHeight="571.0" prefWidth="692.0" BorderPane.alignment="CENTER">
+        <HBox alignment="TOP_RIGHT" prefHeight="41.0" prefWidth="640.0">
+            <Button fx:id="btnLogout" mnemonicParsing="false" prefHeight="22.0" prefWidth="70.0" styleClass="background" text="%UserLIstPane.button.logout"
+                    textFill="#fff9f9" textOverrun="CLIP">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets right="5.0" top="5.0"/>
+                </HBox.margin>
+                <effect>
+                    <DropShadow blurType="ONE_PASS_BOX" color="#00000091"/>
+                </effect>
+            </Button>
+        </HBox>
+        <TableView fx:id="userTable" prefHeight="300.0" prefWidth="679.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="colUserId" maxWidth="700.0" prefWidth="20.0" text="%UserListPane.table.column.id"/>
+                <TableColumn fx:id="colFirstName" maxWidth="4000.0" prefWidth="75.0" text="%UserListPane.table.column.firstName"/>
+                <TableColumn fx:id="colLastName" maxWidth="4000.0" prefWidth="75.0" text="%UserListPane.table.column.lastName"/>
+                <TableColumn fx:id="colDOB" maxWidth="4000.0" prefWidth="75.0" text="%UserListPane.table.column.birthDate"/>
+                <TableColumn fx:id="colGender" maxWidth="4000.0" prefWidth="60.0" text="%UserLIstPane.table.column.gender"/>
+                <TableColumn fx:id="colRole" maxWidth="4000.0" prefWidth="75.0" text="%UserLIstPane.table.column.role"/>
+                <TableColumn fx:id="colEmail" maxWidth="6000.0" prefWidth="130.0" text="%UserLIstPane.table.column.email"/>
+                <TableColumn fx:id="colEdit" maxWidth="3500.0" prefWidth="75.0" text="%UserLIstPane.table.column.edit"/>
+            </columns>
+            <VBox.margin>
+                <Insets left="10.0" right="5.0"/>
+            </VBox.margin>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="deleteUsers" mnemonicParsing="false" text="%UserLIstPane.table.contextmenu.deleteUsers"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </VBox>
+</AnchorPane>

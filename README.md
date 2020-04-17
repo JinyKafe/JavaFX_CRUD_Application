@@ -44,3 +44,17 @@ INSERT INTO public.users (id, dob, email, first_name, gender, last_name, passwor
 ```
 * configure connection properties in ![application.properties](src/main/resources/application.properties)
 
+# build and run with Java 11
+* you must use maven plugin to fetch all necessary JavaFx dependencies 
+    ```
+              <plugin>
+                  <groupId>org.openjfx</groupId>
+                  <artifactId>javafx-maven-plugin</artifactId>
+                  <version>0.0.4</version>
+                  <configuration>
+                      <mainClass>com.codetreatise.Main</mainClass>
+                  </configuration>
+              </plugin>
+    ```
+* run ```mvn clean package``` to build fat JAR with all javafx dependencies
+* run ```java -jar JavaFXSpringBootApp-1.0.jar```

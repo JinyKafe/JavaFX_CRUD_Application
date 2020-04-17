@@ -1,15 +1,14 @@
-package com.codetreatise.service.impl;
+package com.codetreatise.service;
 
-import com.codetreatise.bean.User;
+import com.codetreatise.model.User;
 import com.codetreatise.repository.UserRepository;
-import com.codetreatise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService
+public class UserServiceImpl implements UserService, CrudService<User>
 {
 
     @Autowired
@@ -34,15 +33,15 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    public void delete(Long id)
+    public void deleteById(Long id)
     {
-        userRepository.delete(id);
+        userRepository.deleteById(id);
     }
 
     @Override
-    public User find(Long id)
+    public User findById(Long id)
     {
-        return userRepository.findOne(id);
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -60,8 +59,7 @@ public class UserServiceImpl implements UserService
             return false;
         } else
         {
-            if (password.equals(user.getPassword())) return true;
-            else return false;
+            return password.equals(user.getPassword());
         }
     }
 

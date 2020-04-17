@@ -1,9 +1,8 @@
 package com.codetreatise.service;
 
-import com.codetreatise.bean.User;
-import com.codetreatise.generic.GenericService;
+import com.codetreatise.model.User;
 
-public interface UserService extends GenericService<User>
+public interface UserService
 {
 
     boolean authenticate(String email, String password);

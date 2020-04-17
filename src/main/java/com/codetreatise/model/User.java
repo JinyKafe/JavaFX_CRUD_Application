@@ -1,4 +1,4 @@
-package com.codetreatise.bean;
+package com.codetreatise.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -16,7 +16,7 @@ public class User
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private long id;
+    private Long id;
 
     private String firstName;
 
@@ -33,12 +33,12 @@ public class User
     private String password;
 
 
-    public long getId()
+    public Long getId()
     {
         return id;
     }
 
-    public void setId(long id)
+    public void setId(Long id)
     {
         this.id = id;
     }

@@ -1,6 +1,6 @@
 package com.codetreatise.repository;
 
-import com.codetreatise.bean.User;
+import com.codetreatise.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
