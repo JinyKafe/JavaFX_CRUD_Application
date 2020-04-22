@@ -3,7 +3,7 @@ The application frontend created using JavaFX and backend services are implement
 
 Tutorial taken from [this youtube channel](https://www.youtube.com/watch?v=NQQOPy-jmhA)
 
-![](doc/screenshot.png)
+![](doc/screenshot.gif)
 
 user/password [jankotek@atlas.cz / test]
 
