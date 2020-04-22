@@ -41,5 +41,4 @@ The application frontend created using JavaFX and backend services are implement
     INSERT INTO public.users (id, dob, email, first_name, gender, last_name, password, role) VALUES (10, '2020-03-31', 'user2@email.cz', 'Sarka', 'Female', 'Zubata', 'Password2', 'User');
     ```
 
-* configure connection properties in ![application.properties](src/main/resources/application.properties)
 * run with ```clean install spring-boot:run``` or just ring MainApp.java from your IDE
