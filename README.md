@@ -1,7 +1,7 @@
 # JavaFX CRUD application - User Management
 
 ## Disclainer
-* The original code is forked from https://github.com/RamAlapure/JavaFXSpringBootApp.git, which is an excelend demo appliactoin how to develop JavaFx application with Spring, JavaFx and Java 8. The author also recoded nice video to this demno application which you can find in [here in youtube](https://www.youtube.com/watch?v=NQQOPy-jmhA)
+* The original code is forked from https://github.com/RamAlapure/JavaFXSpringBootApp.git, which is an excelend demo appliactoin about how to develop JavaFx application with Spring, JavaFx and Java 8. Author also published demo video to this tutorial [see here in youtube](https://www.youtube.com/watch?v=NQQOPy-jmhA)
 * I used this application as a template and migrated it to Spring Boot 2 with Java 11. All dependencies are provided by Maven, the application runs out of the box.
 The application frontend created using JavaFX and backend services are implemented using Spring Boot. The app demonstrate simple CRUD operation and switching between two scenes with Login and User Dashboard view. 
 * Migration to Java 11 and Spring Boot 2 was possible thanks to this tiny, yet powerful [JavaFX Weaver library](https://github.com/rgielen/javafx-weaver)
