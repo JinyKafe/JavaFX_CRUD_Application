@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.hexenwerk.tutorial.javafx.crm.client.mvvc.main.top.MenuBarVC">
+    <MenuBar BorderPane.alignment="TOP_LEFT">
+        <Menu mnemonicParsing="false" text="%menuBar.file">
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="%menuBar.file.exit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="%menuBar.edit">
+            <MenuItem mnemonicParsing="false" text="%menuBar.edit.delete"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="%menuBar.help">
+            <MenuItem mnemonicParsing="false" text="%menuBar.help.help"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="%menuBar.about">
+            <MenuItem mnemonicParsing="false" text="%menuBar.about.about"/>
+        </Menu>
+        <Menu fx:id="languageMenu" mnemonicParsing="false" text="%menuBar.language">
+        </Menu>
+    </MenuBar>
+</AnchorPane>

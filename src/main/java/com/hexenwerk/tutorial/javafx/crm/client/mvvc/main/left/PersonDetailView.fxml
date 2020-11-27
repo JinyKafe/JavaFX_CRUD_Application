@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.hexenwerk.tutorial.javafx.crm.client.mvvc.main.left.PersonDetailVC">
+    <VBox prefHeight="571.0" prefWidth="306.0" spacing="10.0" styleClass="background" stylesheets="@/styles/Styles.css" BorderPane.alignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+        <BorderPane.margin>
+            <Insets/>
+        </BorderPane.margin>
+        <Label text="%personDetailPane.addPerson.label" textFill="WHITE">
+            <font>
+                <Font size="20.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" left="20.0" top="30.0"/>
+            </VBox.margin>
+        </Label>
+        <HBox prefHeight="30.0" prefWidth="265.0">
+            <VBox.margin>
+                <Insets left="25.0"/>
+            </VBox.margin>
+            <Label text="%model.person.password.prompt.edit" textFill="#f8f7f7">
+                <font>
+                    <Font size="15.0"/>
+                </font>
+            </Label>
+            <Label fx:id="userIdLabel">
+                <HBox.margin>
+                    <Insets left="25.0"/>
+                </HBox.margin>
+            </Label>
+        </HBox>
+        <TextField fx:id="firstNameField" prefHeight="30.0" prefWidth="246.0" promptText="%model.person.firstName.label">
+            <VBox.margin>
+                <Insets left="25.0" right="25.0"/>
+            </VBox.margin>
+        </TextField>
+        <TextField fx:id="lastNameField" prefHeight="30.0" prefWidth="246.0" promptText="%model.person.lastName.label">
+            <VBox.margin>
+                <Insets left="25.0" right="25.0"/>
+            </VBox.margin>
+        </TextField>
+        <DatePicker fx:id="birthDayPicker" editable="false" prefHeight="30.0" prefWidth="245.0" promptText="%model.person.birthDate.label">
+            <VBox.margin>
+                <Insets left="25.0"/>
+            </VBox.margin>
+        </DatePicker>
+        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="255.0" spacing="15.0">
+            <VBox.margin>
+                <Insets left="25.0" right="25.0"/>
+            </VBox.margin>
+            <RadioButton fx:id="maleRadioButton" mnemonicParsing="false" selected="true" text="%model.person.gender.male.label" textFill="WHITE">
+                <toggleGroup>
+                    <ToggleGroup fx:id="genderToggleGroup"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="femaleRadioButton" mnemonicParsing="false" text="%model.person.gender.female.label" textFill="WHITE"
+                         toggleGroup="$genderToggleGroup">
+                <HBox.margin>
+                    <Insets left="10.0"/>
+                </HBox.margin>
+            </RadioButton>
+        </HBox>
+        <ComboBox fx:id="userRoleComboBox" prefHeight="30.0" prefWidth="246.0" promptText="%model.person.gender.role.prompt.select">
+            <VBox.margin>
+                <Insets left="25.0"/>
+            </VBox.margin>
+        </ComboBox>
+        <TextField fx:id="emailTextField" prefHeight="30.0" prefWidth="246.0" promptText="%model.person.email.prompt.edit">
+            <VBox.margin>
+                <Insets left="25.0" right="25.0"/>
+            </VBox.margin>
+        </TextField>
+        <PasswordField fx:id="passwordField" prefHeight="30.0" prefWidth="246.0" promptText="%model.person.password.prompt.edit">
+            <VBox.margin>
+                <Insets left="25.0" right="25.0"/>
+            </VBox.margin>
+        </PasswordField>
+        <HBox prefHeight="30.0" prefWidth="250.0" spacing="10.0">
+            <children>
+                <Button fx:id="resetButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: white;"
+                        text="%personDetailPane.resetPerson.button.label">
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#1965d0"/>
+                    </effect>
+                </Button>
+                <Button fx:id="saveButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0"
+                        styleClass="btnGreen"
+                        text="Save" textFill="WHITE">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2"/>
+                    </effect>
+                </Button>
+            </children>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets left="110.0"/>
+            </VBox.margin>
+        </HBox>
+    </VBox>
+</AnchorPane>
