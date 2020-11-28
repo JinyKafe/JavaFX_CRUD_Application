@@ -67,21 +67,25 @@ public class PersonListMV extends AbstractModelView<List<Person>, PersonListVC> 
     @Override
     public void bind(PersonListVC view) {
 
-        personSelectionListener = (obs, oldSelection, newSelection) -> this.setCurrentPersonModelView(newSelection);
-        currentPersonChangedListener = (obs, oldPerson, newPerson) -> {
-            if (newPerson == null) {
-                view.tableView.getSelectionModel().clearSelection();
-            } else {
-                PersonDetailMV selectedPerson = view.tableView.getSelectionModel().getSelectedItem();
-                if (selectedPerson != newPerson) {
-                    view.tableView.getSelectionModel().select(newPerson);
-                }
-            }
-        };
+        view.tableView
+                .setItems(this.getPersonObservableList());
 
-        view.tableView.setItems(this.getPersonObservableList());
-        view.tableView.getSelectionModel().selectedItemProperty().addListener(personSelectionListener);
-        this.currentPersonProperty().addListener(currentPersonChangedListener);
+        view.tableView
+                .getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, oldSelection, newSelection) -> this.currentPersonProperty.set(newSelection));
+
+        this.currentPersonProperty
+                .addListener((obs, oldPerson, newPerson) -> {
+                    if (newPerson == null) {
+                        view.tableView.getSelectionModel().clearSelection();
+                    } else {
+                        PersonDetailMV selectedPerson = view.tableView.getSelectionModel().getSelectedItem();
+                        if (selectedPerson != newPerson) {
+                            view.tableView.getSelectionModel().select(newPerson);
+                        }
+                    }
+                });
     }
 
     @Override

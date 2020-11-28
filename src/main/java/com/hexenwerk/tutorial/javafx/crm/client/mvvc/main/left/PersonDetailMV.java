@@ -4,6 +4,7 @@ import com.hexenwerk.tutorial.javafx.crm.client.AbstractModelView;
 import com.hexenwerk.tutorial.javafx.crm.domain.GenderType;
 import com.hexenwerk.tutorial.javafx.crm.domain.Person;
 import com.hexenwerk.tutorial.javafx.crm.domain.RoleType;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -109,11 +110,11 @@ public class PersonDetailMV extends AbstractModelView<Person, PersonDetailVC> {
         this.roleTypeChangeListener = (observable, oldValue, newValue)
                 -> role.setValue(newValue);
 
-        view.firstNameField.textProperty().bindBidirectional(firstName);
-        view.lastNameField.textProperty().bindBidirectional(lastName);
-        view.emailTextField.textProperty().bindBidirectional(email);
-        view.passwordField.textProperty().bindBidirectional(password);
-        view.birthDayPicker.valueProperty().bindBidirectional(birthDay);
+        Bindings.bindBidirectional(view.firstNameField.textProperty(), firstName);
+        Bindings.bindBidirectional(view.lastNameField.textProperty(), lastName);
+        Bindings.bindBidirectional(view.emailTextField.textProperty(), email);
+        Bindings.bindBidirectional(view.passwordField.textProperty(), password);
+        Bindings.bindBidirectional(view.birthDayPicker.valueProperty(), birthDay);
 
         view.genderToggleGroup.selectToggle(GenderType.MALE == gender.getValue()
                 ? view.maleRadioButton
@@ -128,12 +129,12 @@ public class PersonDetailMV extends AbstractModelView<Person, PersonDetailVC> {
 
     @Override
     public void unbind(PersonDetailVC view) {
-        view.userIdLabel.textProperty().unbindBidirectional(id);
-        view.firstNameField.textProperty().unbindBidirectional(firstName);
-        view.lastNameField.textProperty().unbindBidirectional(lastName);
-        view.emailTextField.textProperty().unbindBidirectional(email);
-        view.passwordField.textProperty().unbindBidirectional(password);
-        view.birthDayPicker.valueProperty().unbindBidirectional(birthDay);
+        Bindings.unbindBidirectional(view.userIdLabel.textProperty(), id);
+        Bindings.unbindBidirectional(view.firstNameField.textProperty(), firstName);
+        Bindings.unbindBidirectional(view.lastNameField.textProperty(), lastName);
+        Bindings.unbindBidirectional(view.emailTextField.textProperty(), email);
+        Bindings.unbindBidirectional(view.passwordField.textProperty(), password);
+        Bindings.unbindBidirectional(view.birthDayPicker.valueProperty(), birthDay);
         view.genderToggleGroup.selectedToggleProperty().removeListener(genderChangeListener);
         view.userRoleComboBox.getSelectionModel().selectedItemProperty().removeListener(roleTypeChangeListener);
         view.clear();
