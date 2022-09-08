@@ -17,7 +17,7 @@
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
         <javafx-weaver-spring.version>1.3.0</javafx-weaver-spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <postgresql.version>42.2.5</postgresql.version>
+        <postgresql.version>42.4.1</postgresql.version>
     </properties>
 
     <dependencyManagement>
